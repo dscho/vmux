@@ -11,6 +11,6 @@ ss.server.on 'ready', ->
 
   # Wait for the DOM to finish loading
   jQuery ->
-    
+
     # Load app
     ss.app = require('/app')

@@ -1,6 +1,6 @@
 class MessageInput extends Backbone.View
-  
-  events: 
+
+  events:
     'keypress'   : 'keypress'
 
   render: ->

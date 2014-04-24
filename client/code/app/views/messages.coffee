@@ -1,7 +1,7 @@
 MessageItemView = require('./message_item')
 
 class MessagesView extends Backbone.View
- 
+
   tagName: 'ul'
 
   initialize: ->

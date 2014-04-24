@@ -101,7 +101,7 @@ class Room extends Backbone.View
       if not stream.get('local')
 
         pc = stream.get('pc')
-  
+
         pc.on 'close', =>
           @collection.remove(stream)
 

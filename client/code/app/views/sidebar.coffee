@@ -26,7 +26,7 @@ class InfoModal extends Backbone.View
     return this
 
 class Sidebar extends Backbone.View
-  events: 
+  events:
     'click #home'  : 'go_home'
     'click #group' : 'join_group'
     'click #info'  : 'show_info'

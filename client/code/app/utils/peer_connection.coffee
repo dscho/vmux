@@ -6,10 +6,10 @@ class PC
 
     @log "Creating PeerConnection."
 
-    constraints = 
+    constraints =
       optional: [{'DtlsSrtpKeyAgreement': true}]
 
-    stun_server = 
+    stun_server =
       url: 'stun:88.198.32.137:3479'
 
     turn_server =
@@ -27,9 +27,9 @@ class PC
     @pc.onicecandidate   = (event) =>
       if event.candidate
         @sendSignal
-          type:       "candidate", 
-          label:      event.candidate.sdpMLineIndex, 
-          id:         event.candidate.sdpMid, 
+          type:       "candidate",
+          label:      event.candidate.sdpMLineIndex,
+          id:         event.candidate.sdpMid,
           candidate:  event.candidate.candidate
 
     if @passive
@@ -62,23 +62,23 @@ class PC
     @datachannel.send msg
 
   initiate: ->
-    constraints = 
+    constraints =
       optional: []
       mandatory:
         OfferToReceiveAudio: true
         OfferToReceiveVideo: true
- 
+
     @pc.createOffer (sdp) =>
       @pc.setLocalDescription sdp
       @sendSignal sdp
     ,
     => @log "Error creating offer"
     , constraints
-  
+
 
   processOffer: (msg) ->
     @log "Processing offer"
-    constraints = 
+    constraints =
       optional: []
       mandatory:
         OfferToReceiveAudio: true
@@ -116,7 +116,7 @@ class PC
     @log 'Hanging up'
     @sendSignal type: 'bye'
     @close()
- 
+
   close: =>
     @log 'Closing PeerConnection'
     @trigger 'close'
@@ -124,13 +124,13 @@ class PC
 
   muteAudio: =>
     track.enabled = false for track in localStream.getAudioTracks()
-  
+
   unmuteAudio: =>
     track.enabled = true for track in localStream.getAudioTracks()
 
   muteVideo: =>
     track.enabled = false for track in localStream.getVideoTracks()
-  
+
   unmuteVideo: =>
     track.enabled = true for track in localStream.getVideoTracks()
 

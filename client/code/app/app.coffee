@@ -13,7 +13,7 @@ warnOnReload = ->
       fn()
 
 class AppRouter extends Backbone.Router
- 
+
   routes:
     ''          : 'landing'
     'home'      : 'home'
@@ -39,7 +39,7 @@ class AppRouter extends Backbone.Router
       return App.navigate('/', {trigger: true}) if not loggedIn
 
       if current_user.screen_name.toLowerCase() == profile.toLowerCase()
-        return App.navigate('/home', {trigger: true}) 
+        return App.navigate('/home', {trigger: true})
 
       user          = new User(current_user)
       profile_user  = new User(profile_data)

@@ -67,7 +67,7 @@ ss.http.middleware.prepend ss.http.connect.bodyParser()
 ss.http.middleware.append everyauth.middleware()
 
 ss.http.middleware.append (req, res, next) ->
-  return next() if req.url != '/login/success' 
+  return next() if req.url != '/login/success'
 
   res.writeHead(302, 'Location': req.session.redirectTo || '/home')
   res.end()

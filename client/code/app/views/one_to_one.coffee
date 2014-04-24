@@ -45,7 +45,7 @@ class OneToOne extends Backbone.View
     el.attr('data-original-title', "Camera is #{state}")
     @model.toggleVideo()
 
-  hangup: -> 
+  hangup: ->
     @pc.hangup()
 
   scrollChat: ->

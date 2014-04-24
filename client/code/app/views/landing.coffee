@@ -18,7 +18,7 @@ class GuestModal extends Backbone.View
 
 
 class Landing extends Backbone.View
-  events: 
+  events:
     'click #guest-login' : 'show_guest_login'
 
   render: ->
