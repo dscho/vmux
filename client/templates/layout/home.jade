@@ -8,9 +8,8 @@
     #roster
     #placeholder
       {{#user.guest}}
-      p To receive a call, send this link:
-      p
-        a(href="https://vmux.co/{{user.uuid}}") https://vmux.co/{{user.uuid}}
+      p To receive a call, send
+      a(href="/{{user.uuid}}") this link
       {{/user.guest}}
 
       {{^user.guest}}
